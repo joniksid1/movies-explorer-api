@@ -19,7 +19,7 @@ const movieDataValidation = celebrate({
     image: Joi.string().required().pattern(linkRegExp),
     trailerLink: Joi.string().required().pattern(linkRegExp),
     thumbnail: Joi.string().required().pattern(linkRegExp),
-    owner: Joi.string().required(), // Предполагаем, что owner - это строка с _id пользователя
+    owner: Joi.string().required(),
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),

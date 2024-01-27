@@ -20,8 +20,36 @@ module.exports.getMovies = async (req, res, next) => {
 module.exports.createMovie = async (req, res, next) => {
   try {
     const owner = req.user._id;
-    const { name, link } = req.body;
-    const movie = await Movie.create({ name, link, owner });
+    const {
+      country,
+      director,
+      duration,
+      year,
+      description,
+      image,
+      trailerLink,
+      thumbnail,
+      movieId,
+      nameRU,
+      nameEN,
+    } = req.body;
+
+    // Создаем объект фильма на основе данных из запроса
+    const movie = await Movie.create({
+      country,
+      director,
+      duration,
+      year,
+      description,
+      image,
+      trailerLink,
+      thumbnail,
+      owner,
+      movieId,
+      nameRU,
+      nameEN,
+    });
+
     res.status(HTTP_STATUS_CREATED).send(movie);
   } catch (e) {
     if (e instanceof mongoose.Error.ValidationError) {
