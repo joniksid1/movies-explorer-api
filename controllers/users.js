@@ -1,10 +1,10 @@
-const {
-  HTTP_STATUS_OK,
-  HTTP_STATUS_CREATED,
-} = require('http2').constants;
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const {
+  HTTP_STATUS_OK,
+  HTTP_STATUS_CREATED,
+} = require('../constants/constants');
 const User = require('../models/user');
 const { NotFoundError } = require('../utils/errors/not-found-error');
 const { ConflictError } = require('../utils/errors/conflict-error');

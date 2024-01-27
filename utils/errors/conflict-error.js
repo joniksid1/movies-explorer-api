@@ -1,6 +1,6 @@
 const {
   HTTP_STATUS_CONFLICT,
-} = require('http2').constants;
+} = require('../../constants/constants');
 
 class ConflictError extends Error {
   constructor({ message }) {

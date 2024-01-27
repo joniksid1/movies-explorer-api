@@ -7,9 +7,9 @@ const { loginValidation, registerValidation } = require('../middlewares/user-val
 
 router.post('/signin', loginValidation, login);
 router.post('/signup', registerValidation, createUser);
-router.post('/signout', signout);
 router.use(auth);
 router.use('/users', userRouter);
 router.use('/movies', movieRouter);
+router.post('/signout', signout);
 
 module.exports = { router };

@@ -1,6 +1,6 @@
 const {
   HTTP_STATUS_FORBIDDEN,
-} = require('http2').constants;
+} = require('../../constants/constants');
 
 class ForbiddenError extends Error {
   constructor({ message }) {

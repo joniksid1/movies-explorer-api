@@ -1,6 +1,6 @@
 const {
   HTTP_STATUS_BAD_REQUEST,
-} = require('http2').constants;
+} = require('../../constants/constants');
 
 class CastError extends Error {
   constructor({ message }) {

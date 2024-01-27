@@ -1,7 +1,7 @@
 const {
   HTTP_STATUS_OK,
   HTTP_STATUS_CREATED,
-} = require('http2').constants;
+} = require('../constants/constants');
 const mongoose = require('mongoose');
 const Movie = require('../models/movie');
 const { NotFoundError } = require('../utils/errors/not-found-error');
@@ -10,7 +10,7 @@ const { ForbiddenError } = require('../utils/errors/forbidden-error');
 
 module.exports.getMovies = async (req, res, next) => {
   try {
-    const movies = await Movie.find({});
+    const movies = await Movie.find({ owner: req.user._id });
     res.status(HTTP_STATUS_OK).send(movies);
   } catch (e) {
     next(e);
