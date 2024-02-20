@@ -10,7 +10,7 @@ const { NotFoundError } = require('./utils/errors/not-found-error');
 const error = require('./middlewares/error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = '3000', MONGO_URL = 'mongodb://localhost:27017/bitfilmsdb' } = process.env;
+const { PORT = '3001', MONGO_URL = 'mongodb://localhost:27017/bitfilmsdb' } = process.env;
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(limiter);
 
 app.use(cors({
-  origin: ['http://localhost:3001', 'https://joniksid.nomoredomainsmonster.ru'],
+  origin: ['http://localhost:3000', 'https://joniksid.nomoredomainsmonster.ru'],
   credentials: true,
   maxAge: 60,
 }));

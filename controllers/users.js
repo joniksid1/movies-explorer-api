@@ -29,7 +29,7 @@ module.exports.getCurrentUser = async (req, res, next) => {
 module.exports.createUser = async (req, res, next) => {
   try {
     const {
-      name, about, avatar, email, password,
+      name, email, password,
     } = req.body;
 
     const hash = await bcrypt.hash(password, 10);
@@ -37,8 +37,6 @@ module.exports.createUser = async (req, res, next) => {
       email,
       password: hash,
       name,
-      about,
-      avatar,
     });
     res.status(HTTP_STATUS_CREATED).send(user);
   } catch (e) {
