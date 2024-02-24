@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(limiter);
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://joniksid.nomoredomainsmonster.ru'],
+  origin: ['http://localhost:3000', 'http://localhots:3001', 'https://joniksid.nomoredomainsmonster.ru'],
   credentials: true,
   maxAge: 60,
 }));
