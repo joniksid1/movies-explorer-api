@@ -1,8 +1,8 @@
+const mongoose = require('mongoose');
 const {
   HTTP_STATUS_OK,
   HTTP_STATUS_CREATED,
 } = require('../constants/constants');
-const mongoose = require('mongoose');
 const Movie = require('../models/movie');
 const { NotFoundError } = require('../utils/errors/not-found-error');
 const { CastError } = require('../utils/errors/cast-error');
